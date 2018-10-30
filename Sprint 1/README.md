@@ -27,22 +27,22 @@ Las paginas que se mostraran:
 
 * **Pagina inicial**: Muestra los personajes disponibles ademas de una barra para inciar sesión.
 
-![Pagina principal](imgs/TPHP_PaginaMenu.png)
+![Pagina principal](img/TPHP_PaginaMenu.png)
 
 * **Post**: En el momento en el que se selecciona un héroe, se cambia de vista.
 
-![Pagina principal](imgs/TPHP_PaginaPersonaje.png)
+![Pagina principal](img/TPHP_PaginaPersonaje.png)
 
 * **Formulario de acceso**: Al entrar a la zona de iniciar sesión:
 
-![Pagina principal](imgs/TPHP_PaginaSesion.png)
+![Pagina principal](img/TPHP_PaginaSesion.png)
 
 * **Información de héroes**: Los usuarios registrados pueden editar la información de los personajes
 
 
 * **Administración**: El administrador podra asignar permisos, ademas de "castigar" o eliminar a los usuarios que se comportan mal
 
-![Pagina principal](imgs/TPHP_PaginaAdmin.png)
+![Pagina principal](img/TPHP_PaginaAdmin.png)
 
 
 
