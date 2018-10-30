@@ -19,7 +19,7 @@ La aplicación se compondrá de los personajes, los cuales tendrán una descripc
 
 El esquema es el siguiente:
 
-![Base de dades](img/base_datos)
+![Base de dades](img/base_datos.PNG)
 
 #### 2.2. Descripción de la interfaz
 
@@ -35,14 +35,14 @@ Las paginas que se mostraran:
 
 * **Formulario de acceso**: Al entrar a la zona de iniciar sesión:
 
-![Pagina principal](img/TPHP_PaginaSesion.png)
+![Pagina principal](img/TPHP_PaginaSesion.PNG)
 
 * **Información de héroes**: Los usuarios registrados pueden editar la información de los personajes
 
 
 * **Administración**: El administrador podra asignar permisos, ademas de "castigar" o eliminar a los usuarios que se comportan mal
 
-![Pagina principal](img/TPHP_PaginaAdmin.png)
+![Pagina principal](img/TPHP_PaginaAdmin.PNG)
 
 
 
