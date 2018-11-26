@@ -33,7 +33,7 @@
       <div class="row text-center text-lg-left">
 
         <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
+          <a href="heroes/orisa.php" class="d-block mb-4 h-100">
             <img class="img-fluid img-thumbnail" src="imgs/tanks/Icon-Orisa.png" alt="">
           </a>
         </div>
