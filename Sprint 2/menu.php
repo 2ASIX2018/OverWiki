@@ -31,9 +31,6 @@ $userLabel=$user.$role;
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="registro.php">Iniciar Sesion</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="description.php">Descripción</a>
             </li>
             <li class="nav-item">
@@ -54,7 +51,11 @@ $userLabel=$user.$role;
               <a class="nav-link" href="ponerheroe.php">Poner Heroe</a>
             </li>
             
-            <?php } ?>
+            <?php } else { ?>
+              <li class="nav-item">
+              <a class="nav-link" href="registrarse.php">Registrarse</a>
+            </li>
+            <?php }?>
           </ul>
         </div>
         <div id="userInfo">

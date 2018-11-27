@@ -6,7 +6,7 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/thumbnail-gallery.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../imgs/overwatch_logo.png" />
+    <link rel="icon" type="image/png" href="/imgs/overwatch_logo.png" />
   <head>
 
     <meta charset="utf-8">
@@ -23,7 +23,7 @@
 
     <!-- Navigation -->
     <?php
-    require_once("menu.php");
+    require_once("../menu.php");
     ?>
 
     <!-- Page Content -->
