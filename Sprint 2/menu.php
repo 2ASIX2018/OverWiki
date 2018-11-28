@@ -1,6 +1,6 @@
 <?php
 session_start();
-$user="Anònim";
+$user="Invitado";
 $role="";
 
 if (isset($_SESSION['username'])) {
@@ -60,10 +60,10 @@ $userLabel=$user.$role;
         </div>
         <div id="userInfo">
         <?php echo ($userLabel);
-        if($user!="Anònim") { ?>
-            <a href="cerrarsesion.php"> Tanca la sessió</a>
+        if($user!="Invitado") { ?>
+            <a href="cerrarsesion.php"> Cerrar Sesion</a>
             <?php } else { ?>
-            <a href="registro.php"> Inicia la sessió</a>
+            <a href="loginForm.php"> Iniciar Sesion</a>
         <?php }?>
        </div>
       </div>
