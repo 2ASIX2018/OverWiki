@@ -18,16 +18,16 @@
 
 
   </head>
+
+  <body>
   <?php
 /* Si l'usuari no està registrat redirigim a index.php */
 session_start();
 if(!isset($_SESSION["username"])) header("Location: index.php");
-require ("anadirheroe.php");
-$cat=new Heroe();
-$categories=$cat->getCategories();
+//require ("anadirheroe.php");
+//$cat=new Heroe();
+//$categories=$cat->getCategories();
 ?>
-  <body>
-
     <!-- Navigation -->
     <?php
     require_once("menu.php");
@@ -56,19 +56,15 @@ $categories=$cat->getCategories();
 			    				</div>
                   <div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="text" name="alias_heroe" id="alias_heroe" class="form-control input-sm" placeholder="Alias del heroe">
+			    						<input type="text" name="alias_heroe" id="alias_heroe" class="form-control input-sm" placeholder="Alias del heroe" required>
 			    					</div>
 			    				</div>
-			    			</div>
-
-			    			<div class="form-group">
-			    				<input type="text" name="descripcion" id="descripcion" class="form-control input-sm" placeholder="Descripcion">
 			    			</div>
 
 			    			<div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="text" name="disparop" id="disparop" class="form-control input-sm" placeholder="Disparo Principal">
+			    						<input type="text" name="disparop" id="disparop" class="form-control input-sm" placeholder="Disparo Principal" required>
 			    					</div>
 			    				</div>
                   <div class="col-xs-6 col-sm-6 col-md-6">
@@ -78,12 +74,12 @@ $categories=$cat->getCategories();
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="text" name="1hab" id="1hab" class="form-control input-sm" placeholder="1ra Habilidad">
+			    						<input type="text" name="1hab" id="1hab" class="form-control input-sm" placeholder="1ra Habilidad" required>
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="text" name="2ahab" id="2ahab" class="form-control input-sm" placeholder="2a Habilidad">
+			    						<input type="text" name="2ahab" id="2ahab" class="form-control input-sm" placeholder="2a Habilidad" required>
 			    					</div>
 			    				</div>
                   <div class="col-xs-6 col-sm-6 col-md-6">
@@ -93,7 +89,7 @@ $categories=$cat->getCategories();
 			    				</div>
                   <div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="text" name="definitiva" id="definitiva" class="form-control input-sm" placeholder="Habilidad Definitiva">
+			    						<input type="text" name="definitiva" id="definitiva" class="form-control input-sm" placeholder="Habilidad Definitiva" required>
 			    					</div>
 			    				</div>
                   <div class="col-xs-6 col-sm-6 col-md-6">
@@ -107,10 +103,7 @@ $categories=$cat->getCategories();
 			    					</div>
 			    				</div>
 			    			</div>
-			    			<form enctype="multipart/form-data" action="cosa.php" method="POST">
-                <input name="foto" type="iamge" />
-                <input type="submit" value="Subir foto" />
-                </form>
+
 			    			<input type="submit" value="Enviar" class="btn btn-info btn-block">
 			    		
 			    		</form>

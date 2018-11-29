@@ -15,7 +15,6 @@ USE `OverWiki` ;
 -- Table `OverWiki`.`Personajes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `OverWiki`.`Personajes` (
-  `codigo` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(45) NULL,
   `Apellido` VARCHAR(45) NULL,
   `Alias` VARCHAR(45) NULL,

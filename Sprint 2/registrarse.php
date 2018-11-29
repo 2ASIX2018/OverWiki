@@ -7,6 +7,11 @@
     <?php
     require_once("menu.php");
     ?>
+	 <?php
+/* Si l'usuari està registrat redirigim a index.php */
+session_start();
+if(isset($_SESSION["username"])) header("Location: index.php");
+?>
 <div class="container">
         <div class="row centered-form">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">

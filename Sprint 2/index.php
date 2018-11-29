@@ -23,176 +23,107 @@
     <!-- Navigation -->
     <?php
     require_once("menu.php");
+    require_once("anadirheroe.php")
     ?>
 
-    <!-- Page Content -->
-    <div class="container">
+ <!-- Page Content -->
+ <div class="container">
 
-      <h1 class="my-4 text-center text-lg-left">Selecciona tu heroe</h1>
-      <h2>Tanques</h2>
-      <div class="row text-center text-lg-left">
+<?php
+  // Llegim la llista de notícies
+  
+  // $noticies=$gestorNoticies->llistaNoticies();
+  $noticies=$gestorNoticies->llistaheores($pagina_actual*$noticies_per_pagina, $noticies_per_pagina);
+  
+  if (count($noticies)>0){
+    ?>
 
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="heroes/orisa.php" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/tanks/Icon-Orisa.png" alt="">
-          </a>
+      <!-- Notícia de capçalera -->
+      <div class="row my-4">
+    
+        <div class="col-lg-12">
+          <h1><?php echo($noticies[0]["Alias"]); ?></h1>
+          <a class="btn btn-primary btn-lg" href="article.php?idnoticia=<?php echo($noticies[0]['id']);?>">Llegeix Més</a>
         </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/tanks/Icon-reinhardt.png" alt="">
-          </a>
+        <!-- /.col-md-4 -->
+      </div>
+      <!-- /.row -->
+  <?php } ?>
+
+  
+  <!-- Content Row -->
+  <div class="row">
+
+    <?php
+    
+    for($i=1; $i<count($noticies);$i++)
+    {
+      ?>
+
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h2 class="card-title"> <?php echo($noticies[$i]["Alias"]); ?></h2>
         </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/tanks/Icon-Roadhog.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/tanks/Icon-Winston.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/tanks/Icon-Wrecking_Ball.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/tanks/Icon-Zarya.png" alt="">
-          </a>
+        <div class="card-footer">
+          <a href="article.php?idnoticia=<?php echo($noticies[$i]['Alias']);?>" class="btn btn-primary">Llegeix més</a>
         </div>
       </div>
-      <h2>Daño</h2>
-      <div class="row text-center text-lg-left">
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Ashe.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Bastion.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Doomfist.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Genji.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Hanzo.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Junkrat.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-McCree.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Mei.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Pharah.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Reaper.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Soldier_76.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Sombra.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Symmetra.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Torbjörn.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Tracer.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/dps/Icon-Widowmaker.png" alt="">
-          </a>
-        </div>
-      </div>
-      <h2>Soporte</h2>
-      <div class="row text-center text-lg-left">
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/supp/Icon-Ana.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/supp/Icon-Brigitte.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/supp/Icon-Lúcio.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/supp/Icon-Mercy.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/supp/Icon-Moira.png" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="imgs/supp/Icon-Zenyatta.png" alt="">
-          </a>
-        </div>
     </div>
-    <!-- /.container -->
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; OverWiki</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+    <?php } ?>
+    
+  </div>
+  <!-- /.row -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  </body>
+<!-- Pagination -->
+<ul class="pagination justify-content-center">
+
+
+
+    <li class="page-item">
+      <?php 
+      $prev_pg=$pagina_actual-1;
+      if ($prev_pg<0) $prev_pg=0;
+      ?>
+      <a class="page-link" href="index.php?pg=<?php echo($prev_pg);?>" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+
+    <?php
+      for ($i=0; $i<($num_noticies)/$noticies_per_pagina; $i++){
+    ?>
+
+    <li class="page-item">
+      <a class="page-link" href="index.php?pg=<?php echo($i);?>"><?php echo($i+1);?></a>
+    </li>
+    
+    <?php 
+      }
+      $next_pg=$pagina_actual+1;
+      if ($next_pg>(($num_noticies)/$noticies_per_pagina)-1) $next_pg=(($num_noticies)/$noticies_per_pagina)-1;
+      ?>
+    <li class="page-item">
+      <a class="page-link" href="index.php?pg=<?php echo($next_pg);?>" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+
+
+</ul>
+
+</div>
+<!-- /.container -->
+
+
+
+<?php require_once "footer.php"; ?>
+
+
+</body>
 
 </html>
