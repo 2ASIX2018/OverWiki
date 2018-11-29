@@ -18,15 +18,14 @@ CREATE TABLE IF NOT EXISTS `OverWiki`.`Personajes` (
   `Nombre` VARCHAR(45) NULL,
   `Apellido` VARCHAR(45) NULL,
   `Alias` VARCHAR(45) NULL,
-  `Clase` INT NULL,
-  `Disparo Principal` VARCHAR(45) NULL,
-  `Disparo Secundario` VARCHAR(45) NULL,
-  `1ra Habilidad` VARCHAR(45) NULL,
-  `2a Habilidad` VARCHAR(45) NULL,
-  `3a Habilidad` VARCHAR(45) NULL,
-  `Habilidad Definitva` VARCHAR(45) NULL,
-  `Pasiva` VARCHAR(45) NULL,
-  PRIMARY KEY (`codigo`))
+  `Clase` VARCHAR(45) NULL,
+  `DisparoP` VARCHAR(45) NULL,
+  `DisparoS` VARCHAR(45) NULL,
+  `HabilidadPrimaria` VARCHAR(45) NULL,
+  `HabilidadSecundaria` VARCHAR(45) NULL,
+  `HabilidadTercera` VARCHAR(45) NULL,
+  `Definitva` VARCHAR(45) NULL,
+  `Pasiva` VARCHAR(45) NULL)
 ENGINE = InnoDB;
 
 

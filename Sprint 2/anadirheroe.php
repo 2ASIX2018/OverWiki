@@ -1,5 +1,5 @@
 <?php
-class Noticia{
+class Heroes{
     
     public function nuevoheroe($nombre, $apellido, $alias, $descripcion, $disparoprincipal, $diparosecundario, $hab1, $hab2, $hab3, $definitiva, $pasiva, $clase){
         
@@ -16,8 +16,8 @@ class Noticia{
             `Apellido`,
             `Alias`,
             `Clase`,
-            `DiparoP`,
-            `DiparoS`,
+            `DisparoP`,
+            `DisparoS`,
             `HabilidadPrimaria`,
             `HabilidadSecundaria`,
             `HabilidadTercera`,
@@ -44,7 +44,7 @@ class Noticia{
             $dbCon=null;
         }
     }
-    public function llistaheores($ini, $fin){
+    public function llistaheroes($ini, $fin){
         try{
             require "connexio.php";
             
@@ -58,8 +58,8 @@ class Noticia{
             `Apellido`,
             `Alias`,
             `Clase`,
-            `DiparoP`,
-            `DiparoS`,
+            `DisparoP`,
+            `DisparoS`,
             `HabilidadPrimaria`,
             `HabilidadSecundaria`,
             `HabilidadTercera`,
@@ -72,21 +72,21 @@ class Noticia{
             $consulta->bindValue(':offset', intval($ini),PDO::PARAM_INT);
             $consulta->bindValue(':limit',  intval($fin),PDO::PARAM_INT);
             $consulta->execute();
-            $noticies=array();
+            $heroes=array();
             // Agafem els resultats amb un bucle i els afegim a l'array de noticies
             while($fila=$consulta->fetch()){
-                $noticia["Nombre"]=$fila[0];
-                $noticia["Apellido"]=$fila[1];
-                $noticia["Alias"]=$fila[3];
-                $noticia["Clase"]=$fila[4];
-                $noticia["DisparoP"]=$fila[5];
-                $noticia["DisparoS"]=$fila[6];
-                $noticia["HabilidadPrimaria"]=$fila[7];
-                $noticia["HabilidadSecundari"]=$fila[8];
-                $noticia["HabilidadTercera"]=$fila[9];
-                $noticia["Definitiva"]=$fila[10];
-                $noticia["Pasiva"]=$fila[11];
-                array_push($noticies, $noticia);
+                $heroe["Nombre"]=$fila[0];
+                $heroe["Apellido"]=$fila[1];
+                $heroe["Alias"]=$fila[3];
+//                $heroe["Clase"]=$fila[4];
+//                $heroe["DisparoP"]=$fila[5];
+//                $heroe["DisparoS"]=$fila[6];
+//                $heroe["HabilidadPrimaria"]=$fila[7];
+//                $heroe["HabilidadSecundari"]=$fila[8];
+//                $heroe["HabilidadTercera"]=$fila[9];
+//                $heroe["Definitiva"]=$fila[10];
+//                $heroe["Pasiva"]=$fila[11];
+                array_push($heroe);
             }
             // Tanquem la connexió
             $dbCon=null;

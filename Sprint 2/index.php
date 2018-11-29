@@ -23,7 +23,8 @@
     <!-- Navigation -->
     <?php
     require_once("menu.php");
-    require_once("anadirheroe.php")
+    require_once("anadirheroe.php");
+    $heroe=new Heroes();
     ?>
 
  <!-- Page Content -->
@@ -33,7 +34,7 @@
   // Llegim la llista de notícies
   
   // $noticies=$gestorNoticies->llistaNoticies();
-  $noticies=$gestorNoticies->llistaheores($pagina_actual*$noticies_per_pagina, $noticies_per_pagina);
+  $noticies=$heroe->llistaheroes($pagina_actual*$noticies_per_pagina, $noticies_per_pagina);
   
   if (count($noticies)>0){
     ?>
@@ -43,7 +44,7 @@
     
         <div class="col-lg-12">
           <h1><?php echo($noticies[0]["Alias"]); ?></h1>
-          <a class="btn btn-primary btn-lg" href="article.php?idnoticia=<?php echo($noticies[0]['id']);?>">Llegeix Més</a>
+          <a class="btn btn-primary btn-lg" href="article.php?idnoticia=<?php echo($noticies[0]['Alias']);?>">Llegeix Més</a>
         </div>
         <!-- /.col-md-4 -->
       </div>
