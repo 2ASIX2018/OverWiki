@@ -33,18 +33,18 @@
 <?php
   // Llegim la llista de notícies
   
-  // $noticies=$gestorNoticies->llistaNoticies();
-  $noticies=$heroe->llistaheroes($pagina_actual*$noticies_per_pagina, $noticies_per_pagina);
+  // $heroes=$gestorheroes->llistaheroes();
+  $heroes=$heroe->llistaheroes($pagina_actual*$heroes_per_pagina, $heroes_per_pagina);
   
-  if (count($noticies)>0){
+  if (count($heroes)>0){
     ?>
 
       <!-- Notícia de capçalera -->
       <div class="row my-4">
     
         <div class="col-lg-12">
-          <h1><?php echo($noticies[0]["Alias"]); ?></h1>
-          <a class="btn btn-primary btn-lg" href="article.php?idnoticia=<?php echo($noticies[0]['Alias']);?>">Llegeix Més</a>
+          <h1><?php echo($heroes[0]["Alias"]); ?></h1>
+          <a class="btn btn-primary btn-lg" href="article.php?idnoticia=<?php echo($heroes[0]['Alias']);?>">Llegeix Més</a>
         </div>
         <!-- /.col-md-4 -->
       </div>
@@ -57,17 +57,17 @@
 
     <?php
     
-    for($i=1; $i<count($noticies);$i++)
+    for($i=1; $i<count($heroes);$i++)
     {
       ?>
 
     <div class="col-md-4 mb-4">
       <div class="card h-100">
         <div class="card-body">
-          <h2 class="card-title"> <?php echo($noticies[$i]["Alias"]); ?></h2>
+          <h2 class="card-title"> <?php echo($heroes[$i]["Alias"]); ?></h2>
         </div>
         <div class="card-footer">
-          <a href="article.php?idnoticia=<?php echo($noticies[$i]['Alias']);?>" class="btn btn-primary">Llegeix més</a>
+          <a href="article.php?idnoticia=<?php echo($heroes[$i]['Alias']);?>" class="btn btn-primary">Llegeix més</a>
         </div>
       </div>
     </div>
@@ -95,7 +95,7 @@
     </li>
 
     <?php
-      for ($i=0; $i<($num_noticies)/$noticies_per_pagina; $i++){
+      for ($i=0; $i<($num_heroes)/$heroes_per_pagina; $i++){
     ?>
 
     <li class="page-item">
@@ -105,7 +105,7 @@
     <?php 
       }
       $next_pg=$pagina_actual+1;
-      if ($next_pg>(($num_noticies)/$noticies_per_pagina)-1) $next_pg=(($num_noticies)/$noticies_per_pagina)-1;
+      if ($next_pg>(($num_heroes)/$heroes_per_pagina)-1) $next_pg=(($num_heroes)/$heroes_per_pagina)-1;
       ?>
     <li class="page-item">
       <a class="page-link" href="index.php?pg=<?php echo($next_pg);?>" aria-label="Next">
