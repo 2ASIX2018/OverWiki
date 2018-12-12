@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("usuari.php");
+require_once("models/usuari.php");
 // Creem un objecte de tipus usuari
 $usuari=new Usuari();
 

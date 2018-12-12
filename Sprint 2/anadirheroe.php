@@ -68,7 +68,7 @@ class Heroes{
             
             // Executem la consulta
             //$consulta->execute(array(1.0, 3.0));
-            //$consulta->execute();
+            $consulta->execute();
             $consulta->bindValue(':offset', intval($ini),PDO::PARAM_INT);
             $consulta->bindValue(':limit',  intval($fin),PDO::PARAM_INT);
             $consulta->execute();
@@ -78,20 +78,20 @@ class Heroes{
                 $heroe["Nombre"]=$fila[0];
                 $heroe["Apellido"]=$fila[1];
                 $heroe["Alias"]=$fila[3];
-//                $heroe["Clase"]=$fila[4];
-//                $heroe["DisparoP"]=$fila[5];
-//                $heroe["DisparoS"]=$fila[6];
-//                $heroe["HabilidadPrimaria"]=$fila[7];
-//                $heroe["HabilidadSecundari"]=$fila[8];
-//                $heroe["HabilidadTercera"]=$fila[9];
-//                $heroe["Definitiva"]=$fila[10];
-//                $heroe["Pasiva"]=$fila[11];
-                array_push($heroe);
+                $heroe["Clase"]=$fila[4];
+                $heroe["DisparoP"]=$fila[5];
+                $heroe["DisparoS"]=$fila[6];
+                $heroe["HabilidadPrimaria"]=$fila[7];
+                $heroe["HabilidadSecundari"]=$fila[8];
+                $heroe["HabilidadTercera"]=$fila[9];
+                $heroe["Definitiva"]=$fila[10];
+                $heroe["Pasiva"]=$fila[11];
+                array_push($heroes, $heroe);
             }
             // Tanquem la connexió
             $dbCon=null;
             // tornem els resultats
-            return $noticies;
+            return $heroes;
             
         } catch (PDOException $e){
             echo("Error:".$e->getMessage());

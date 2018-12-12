@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("usuari.php");
+require_once("models/usuari.php");
 // Creem un objecte de tipus usuari
 $usuari=new Usuari();
 // Vector temporal amb els usuaris
@@ -46,7 +46,8 @@ else { // Aquesta clau la tancarem després d'afegir codi HTML pur
     <a href="registrarse.php">Registrarse</a>
     <a href="loginForm.php">Volver atras</a>
     </div>
-  <?php require_once "footer.php"; ?>    
+    <!-- Pie de pagina -->
+    <?php require_once "footer.php"; ?>    
 </body>
 
 </html>
